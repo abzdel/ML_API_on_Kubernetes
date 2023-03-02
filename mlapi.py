@@ -6,13 +6,13 @@ import numpy as np
 app = FastAPI()
 
 
-with open("model/ppg_model.pkl", "rb") as f:
+with open("ppg_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 
 @app.get("/")
 async def root():
-    return {"hello": "mlapi"}
+    return {"hello": "mlapi. add /docs to the url above to see usage of this tool."}
 
 
 @app.get("/predict/{pts_5}/{stl_5}/{ft_pct_5}/{min_5}")

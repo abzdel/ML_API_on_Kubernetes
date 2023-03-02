@@ -3,4 +3,4 @@ black
 fastapi
 uvicorn
 numpy
-scikit-learn
+scikit-learn==1.1.3

@@ -9,8 +9,11 @@ lint:
 	pylint --disable=R,C *.py
 
 clean:
-	docker system prune -a
+	kubectl delete deployment mlapi
+	kubectl delete service mlapi
 	minikube ssh -- docker system prune -a
+	minikube stop
+	docker system prune -a
 
 
 all: install lint format
